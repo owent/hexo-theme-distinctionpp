@@ -1,0 +1,12 @@
+{
+  "name": "hexo-theme-distinctionpp",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "hexo-renderer-sass": "^0.3.2",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {}
+}
