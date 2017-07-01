@@ -1,6 +1,8 @@
 <% if (post.tags && post.tags.length){ %>
+<div class="article-tags"><label><%= __('tags') %>: </label>
   <%- list_tags(post.tags, {
     show_count: false,
     class: 'article-tag'
   }) %>
+</div>
 <% } %>

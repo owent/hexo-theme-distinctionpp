@@ -1,0 +1,30 @@
+<% if (page.total > 1) { %>
+  <nav id="page-nav">
+      <ul class="pagination">
+        <% if (page.current > 1) { %>
+          <% if (page.current === 2) { %>
+          <li class="page-item"><a class="page-link" href="<%- url_for(page.base) %>">&laquo;<%= __('prev') %></a></li>
+          <% } else { %>
+          <li class="page-item"><a class="page-link" href="<%- url_for(page.base + config.pagination_dir + '/'  + (page.current - 1) + '/') %>">&laquo;<%= __('prev') %></a></li>
+          <% } %>
+        <% } %>
+        <li class="page-item<% if (page.current === 1) { %> disabled<% } %>">
+          <a class="page-link" href="<%- url_for(page.base) %>">1</a>
+          <% if (page.current === 1) { %>
+            <span class="sr-only">(current)</span>
+          <% } %>
+        </li>
+        <% for (let i = 2; i <= page.total; ++ i ) { %>
+            <li class="page-item<% if (page.current == i) { %> disabled<% } %>">
+              <a class="page-link" href="<%- url_for(page.base + config.pagination_dir + '/'  + i + '/') %>"><%= i %></a>
+              <% if (page.current == i) { %>
+                <span class="sr-only">(current)</span>
+              <% } %>
+            </li>
+        <% } %>
+        <% if (page.current < page.total) { %>
+          <li class="page-item"><a class="page-link" href="<%- url_for(page.base + config.pagination_dir + '/'  + (page.current + 1) + '/') %>"><%= __('next') %>&raquo;</a></li>
+        <% } %>
+    </ul>
+  </nav>
+<% } %>
