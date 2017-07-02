@@ -1,10 +1,7 @@
 <% if (post.categories && post.categories.length){ %>
-  <div class="article-category">
-    <%- list_categories(post.categories, {
-      show_count: false,
-      class: 'article-category',
-      style: 'none',
-      separator: '►'
-    }) %>
-  </div>
+  <ol>
+    <% post.categories.filter(function(cat) { return cat.length;}).forEach(function(cat, i) { %>
+    <li><a href="<%- url_for(cat.path) %>"><%= cat.name %></a></li>
+    <% }); %>
+  </ol>
 <% } %>

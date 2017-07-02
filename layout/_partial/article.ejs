@@ -7,8 +7,9 @@
       <hr />
       <% } %><% if (meta !== false) { %>
       <div class="article-meta">
-      <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-      <%- partial('post/category') %>
+        <span class="article-meta-left"><%- partial('post/category') %></span>
+        <span class="article-meta-right"><%- partial('post/date', {class_name: 'article-date', date_format: null}) %></span>
+        <span class="clearfix"></span>
       </div><% } %>
       <div class="article-entry" itemprop="articleBody">
         <% if (post.excerpt && index){ %>

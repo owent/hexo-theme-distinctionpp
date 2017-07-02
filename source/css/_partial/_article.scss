@@ -93,3 +93,37 @@
         margin: 0;
     }
 }
+
+.article-meta {
+    font-size: 0.8rem;
+    background: rgb(216,216,216);
+    padding: 0.1rem 1rem;
+
+    ol {
+        margin-left: 0 !important;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+    }
+
+    li:not(:first-child) {
+        ::before {
+            content: " / "
+        }
+    }
+
+    margin: 0 0 1rem 0;
+}
+
+.article-meta-left {
+    float: left;
+}
+
+.article-meta-right {
+    float: right;
+    font-style: italic;
+    a {
+        color: rgb(64,128,255);
+    }
+}
