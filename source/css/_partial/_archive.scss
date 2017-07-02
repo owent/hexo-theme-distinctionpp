@@ -1,7 +1,7 @@
 #archive-content, #index-content {
     @include column-count(auto);
-    @include column-width(26em);
-    @include column-gap(1em);
+    @include column-width(26rem);
+    @include column-gap(1rem);
 }
 
 .archive-article {
@@ -10,5 +10,9 @@
 
     .archive-article-inner {
         overflow: hidden;
+
+        .archive-article-title {
+            word-wrap: break-word;
+        }
     }
 }

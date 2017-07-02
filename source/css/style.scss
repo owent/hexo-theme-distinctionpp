@@ -1,12 +1,12 @@
 // ============ Import bootstrap ============
 // Core CSS
-@import "_bootstrap/bootstrap-reboot";
+// @import "_bootstrap/bootstrap-reboot";
 
 // @import "_bootstrap/type";
 // @import "_bootstrap/images";
 // @import "_bootstrap/code";
 // @import "_bootstrap/grid";
-@import "_bootstrap/tables";
+// @import "_bootstrap/tables";
 // @import "_bootstrap/forms";
 // @import "_bootstrap/buttons";
 
@@ -50,13 +50,6 @@
 
 @import 'variables';
 @import '_utils/mixin';
-
-table {
-    @extend .table;
-    @extend .table-bordered;
-    @extend .table-striped;
-}
-
 @import '_partial/default';
 @import '_partial/header';
 @import '_partial/archive';

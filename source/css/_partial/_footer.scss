@@ -1,18 +1,18 @@
 
 #footer {
     border-top: 2px solid #000;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     background: #222;
 
     .outer {
         .inner {
             background: #222;
-            margin: 0.25em 0 0.25em 0;
-            border: 0.05em solid #000;
-            @include border-radius(0.25em);
-            @include box-shadow(0 0 0.4em rgb(0,0,0));
+            margin: 0.25rem 0 0.25rem 0;
+            border: 0.05rem solid #000;
+            @include border-radius($border-radius);
+            @include box-shadow(0 0 0.4rem rgb(0,0,0));
             color: rgb(255,255,255);
-            padding: 0 2em;
+            padding: 0 2rem;
             overflow: hidden;
         }
     }
