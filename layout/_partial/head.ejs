@@ -21,11 +21,11 @@
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <% if (theme.rss){ %>
-    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+  <% if (config.rss || theme.rss){ %>
+    <link rel="alternate" href="<%- config.rss || theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
-  <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
+  <% if (config.favicon){ %>
+    <link rel="icon" href="<%- config.favicon %>">
   <% } %>
   <% if (!config.highlight.enable && theme.highlight.enable) { %>
   <!-- highlight.js begin -->

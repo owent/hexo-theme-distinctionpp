@@ -1,8 +1,8 @@
 <article class="article-panel archive-article archive-type-<%= post.layout %>">
   <div class="article-panel-inner archive-article-inner">
     <header class="article-header"><%- partial('post/title', {class_name: 'archive-article-title'}) %></header>
-    <% if (index && post.excerpt) { %>
-    <div class="article-excerpt"><%- post.excerpt %></div>
+    <% if (index && (post.description || post.excerpt)) { %>
+    <div class="article-excerpt"><%- post.description || post.excerpt %></div>
     <% } %>
     <div class="article-more"><a href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%- __('read_more') %></a></div>
     <div class="article-panel-footer archive-article-footer"><%- partial('post/date', {class_name: 'archive-article-date', date_format: 'LL'}) %></div>

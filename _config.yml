@@ -2,7 +2,6 @@
 menu:
   Home: /
   Archives: /archives
-  About: /about
 rss: /atom.xml
 
 highlight:
@@ -47,4 +46,3 @@ show_count: false
 
 # Miscellaneous
 google_analytics:
-favicon: /favicon.ico
