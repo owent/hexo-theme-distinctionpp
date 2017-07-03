@@ -38,3 +38,7 @@ show_count: false
 
 # Miscellaneous
 google_analytics:
+
+gitment:
+  js: https://imsun.github.io/gitment/dist/gitment.browser.js
+  css: https://imsun.github.io/gitment/style/default.css

@@ -29,13 +29,14 @@
     <%- partial('post/nav') %>
     <% } %>
     <hr />
-    <% if (!index && (post.layout == 'post' || config.disqus_on_page) && post.comments && config.disqus_shortname) { %>
+    <% if (!index && post.comments) { %>
+    <% if (config.disqus_shortname && (post.layout == 'post' || config.disqus_on_page)) { %>
     <section id="comments">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = "<%- post.permalink || url_for(post.link) %>";
-        this.page.identifier = "<%- post.id || post.permalink || url_for(post.link) %>";
+        this.page.url = "<%- post.permalink %>";
+        this.page.identifier = "<%- post.id || url_for(post.path || post.link) || post.permalink %>";
       };
       (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
@@ -46,6 +47,12 @@
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </section>
+    <% } %>
+    <% if (config.gitment && config.gitment.owner && config.gitment.repo && config.gitment.oauth.client_id && config.gitment.oauth.client_secret &&
+       (post.layout == 'post' || config.gitment.enable_on_page)
+    ) { %>
+      <div id="gitment_thread"></div>
+    <% } %>
     <% } %>
   </div>
 </article>

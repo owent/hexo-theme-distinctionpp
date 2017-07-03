@@ -82,6 +82,16 @@ fancybox:
 
 disqus_shortname:     # disqus shortname for inserting comments
 disqus_on_page: false # if insert disqus in pages
+
+gitment: # use https://github.com/imsun/gitment for comments
+  enable_on_page: false
+  js: https://imsun.github.io/gitment/dist/gitment.browser.js
+  css: https://imsun.github.io/gitment/style/default.css
+  owner: owent
+  repo: 'blog-comment'
+  oauth:
+    client_id: 
+    client_secret: 
 ```
 
 - **menu** - Navigation menu

@@ -31,3 +31,25 @@
   </script>
   <!-- highlight.js end -->
 <% } %>
+<% if (config.gitment && config.gitment.owner && config.gitment.repo && config.gitment.oauth.client_id && config.gitment.oauth.client_secret) { %>
+  <!-- gitment begin -->
+  <script type="text/javascript" src="<%- config.gitment.js || theme.gitment.js %>"></script>
+  <script type="text/javascript">
+    jQuery(function(){
+      jQuery("head").append('<link rel="stylesheet" href="<%- config.gitment.css || theme.gitment.css %>" />');
+      const gitment = new Gitment({
+        owner: '<%- config.gitment.owner %>',
+        repo: '<%- config.gitment.repo %>',
+        oauth: {
+          client_id: '<%- config.gitment.oauth.client_id %>',
+          client_secret: '<%- config.gitment.oauth.client_secret %>',
+        },
+        // ...
+        // For more available options, check out the documentation below
+      })
+
+      gitment.render(document.getElementById('gitment_thread'))
+    });
+  </script>
+  <!-- gitment end -->
+<% } %>
