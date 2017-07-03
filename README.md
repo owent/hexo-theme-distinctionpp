@@ -53,7 +53,6 @@ highlight:
     #classPrefix: 'hljs-'
     languages: {}   # language alias
 
-# Sidebar
 widgets:
 - category
 - tag
@@ -80,14 +79,16 @@ fancybox:
   enable: true
   js: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js
   css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css
+
+disqus_shortname:     # disqus shortname for inserting comments
+disqus_on_page: false # if insert disqus in pages
 ```
 
 - **menu** - Navigation menu
 - **rss** - RSS link
 - **excerpt_link** - "Read More" link at the bottom of excerpted articles. `false` to hide the link.
 - **fancybox** - Enable [Fancybox]
-- **sidebar** - Sidebar style. You can choose `left`, `right`, `bottom` or `false`.
-- **widgets** - Widgets displaying in sidebar
+- **widgets** - Widgets displaying in archives
 - **google_analytics** - Google Analytics ID
 - **favicon** - Favicon path
 

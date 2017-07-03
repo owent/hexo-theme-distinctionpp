@@ -16,3 +16,25 @@
         }
     }
 }
+
+.widget-wrap {
+    border: $article-tag-border;
+    @include border-radius($border-radius-lg);
+    padding: 1rem;
+}
+
+.widget-list-inline {
+    ul, ol {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+
+        li:not(:first-child)::before {
+            content: " | ";
+            color: $gray;
+        }
+    }
+}

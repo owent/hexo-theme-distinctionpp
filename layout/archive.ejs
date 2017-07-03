@@ -1,2 +1,7 @@
-<div id="archive-content"><%- partial('_partial/archive', {pagination: config.archive, index: false}) %></div>
+<% if (page.base.replace(/\/*$/, '') == (config.archive_dir || 'archives').replace(/\/*$/, ''))  { %>
+<div id="archive-page-content"><%- partial('_partial/archive', {pagination: config.archive, index: false, summary: true}) %></div>
+<% } else { %>
+<div id="archive-content"><%- partial('_partial/archive', {pagination: config.archive, index: false, summary: false}) %></div>
+<hr />
 <%- partial('_partial/page-nav', {pagination: config.archive, index: false}) %>
+<% } %>

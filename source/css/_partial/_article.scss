@@ -95,11 +95,7 @@
 }
 
 .article-meta {
-    font-size: 0.8rem;
-    background: rgb(216,216,216);
-    padding: 0.1rem 1rem;
-
-    ol {
+    ul, ol {
         margin-left: 0 !important;
         list-style: none;
     }

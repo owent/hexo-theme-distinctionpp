@@ -5,12 +5,7 @@
       <% if (post.link || post.title){ %>
       <header class="article-header"><%- partial('post/title', {class_name: 'article-title'}) %></header>
       <hr />
-      <% } %><% if (meta !== false) { %>
-      <div class="article-meta">
-        <span class="article-meta-left"><%- partial('post/category') %></span>
-        <span class="article-meta-right"><%- partial('post/date', {class_name: 'article-date', date_format: null}) %></span>
-        <span class="clearfix"></span>
-      </div><% } %>
+      <% } %>
       <div class="article-entry" itemprop="articleBody">
         <% if (post.excerpt && index){ %>
           <div class="article-excerpt"><%- post.excerpt %></div>
@@ -21,11 +16,12 @@
       </div>
       <hr />
       <footer class="article-footer">
-        <div class="article-panel-footer archive-article-footer"><%- partial('post/date', {class_name: 'article-date', date_format: 'LL'}) %></div>
+        <div class="article-panel-footer article-meta article-footer">
+          <span class="article-meta-left"><%- partial('post/category') %></span>
+          <span class="article-meta-right"><%- partial('post/date', {class_name: 'article-date', date_format: 'LL'}) %></span>
+          <span class="clearfix"></span>
+        </div>
         <!-- 社交分享 --><!-- <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a> -->
-        <% if (post.comments && config.disqus_shortname){ %>
-          <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
-        <% } %>
         <%- partial('post/tag') %>
       </footer>
     </div>
@@ -33,11 +29,22 @@
     <%- partial('post/nav') %>
     <% } %>
     <hr />
-    <% if (!index && post.comments && config.disqus_shortname){ %>
+    <% if (!index && (post.layout == 'post' || config.disqus_on_page) && post.comments && config.disqus_shortname) { %>
     <section id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = "<%- post.permalink || url_for(post.link) %>";
+        this.page.identifier = "<%- post.id || post.permalink || url_for(post.link) %>";
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://<%- config.disqus_shortname %>.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </section>
     <% } %>
   </div>

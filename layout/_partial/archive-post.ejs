@@ -1,6 +1,6 @@
 <article class="article-panel archive-article archive-type-<%= post.layout %>">
   <div class="article-panel-inner archive-article-inner">
-    <header class="article-header"><%- partial('post/title', {class_name: 'archive-article-title'}) %></header>
+    <header class="article-header archive-article-title"><%- partial('post/title', {class_name: 'archive-article-title'}) %></header>
     <% if (index && (post.description || post.excerpt)) { %>
     <div class="article-excerpt"><%- post.description || post.excerpt %></div>
     <% } %>

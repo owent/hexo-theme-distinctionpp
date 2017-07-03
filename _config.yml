@@ -20,25 +20,17 @@ fancybox:
   js: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js
   css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css
 
-# Sidebar
-sidebar: none
 search:
   enable: true
   url: //google.com/search
   keyword: q
 
 widgets:
+- recent_posts
 - category
 - tag
 - tagcloud
 - archive
-- recent_posts
-
-# display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
-# - category
-# - tagcloud
-# - archive
 
 # widget behavior
 archive_type: 'monthly'
