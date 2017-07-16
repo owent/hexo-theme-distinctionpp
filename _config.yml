@@ -21,9 +21,10 @@ fancybox:
   css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css
 
 search:
-  enable: true
   url: //google.com/search
   keyword: q
+  sitename: sitesearch
+  siteprefix: ""
 
 widgets:
 - recent_posts

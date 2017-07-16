@@ -24,10 +24,10 @@
             <li class="nav-item"><a id="nav-rss-link" class="nav-link" href="<%- config.rss || theme.rss %>" title="<%= __('rss_feed') %>"><%= __('rss_feed') %></a></li>
             <% } %>
           </ul>
-          <% if (theme.search.enable){ %>
-          <form class="form-inline" method="get" accept-charset="UTF-8" action="<%- theme.search.url || '//google.com/search' %>">
-            <input type="hidden" name="sitesearch" value="<%- config.url.replace(/^[^:]*:\/\//, '').replace(/\/.*/, '') %>" />
-            <input class="form-control" type="text" placeholder="<%= __('search') %>" name="<%- theme.search.keyword || 'q' %>" />
+          <% if (config.search && config.search.enable){ %>
+          <form class="form-inline" method="get" accept-charset="UTF-8" action="<%- config.search.url || theme.search.url %>">
+            <input type="hidden" name="<%- config.search.sitename || theme.search.sitename %>" value="<%- config.search.siteprefix || theme.search.siteprefix -%><%- config.url.replace(/^[^:\/]*:?\/\//, '').replace(/\/.*/, '') %>" />
+            <input class="form-control" type="text" placeholder="<%= __('search') %>" name="<%- config.search.keyword || theme.search.keyword %>" />
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><%= __('search') %></button>
           </form>
           <% } %>
